@@ -1,0 +1,33 @@
+%flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.header_container{
+    margin: 22px 22px 0px 22px;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.header_logo{
+    @extend %flex-row;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 0px;
+
+    .logo{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p{
+        margin-top: 0%;
+        color: gray;
+        font-weight: 800;
+    }
+}
+
+.menuPanel{
+    @extend %flex-row;
+    justify-content: space-around;
+}
