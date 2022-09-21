@@ -1,6 +1,21 @@
+import React from 'react';
 import './style.scss';
 
 function Header(props){
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onClickMenu = (index) =>{
+    setActiveIndex(index);
+  }
+
+  const menu = [
+    'Главная',
+    'Новости',
+    'Картины и художники',
+    'Экскурсии и музеи',
+    'О сайте'
+  ]
+
     return(
       <div className ='header_container'>
         <div className ='header_logo'>
@@ -10,9 +25,15 @@ function Header(props){
           </div>
         </div>
         <div className='menuPanel'>
-          <button>Главная</button>
-          <button>Test</button>
-          <button>О сайте</button>
+          <ul>
+            {
+              menu.map((value, index) => (
+                <li onClick={() => onClickMenu(index)} className={activeIndex === index? 'active': ''}>
+                  {value}
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     )
