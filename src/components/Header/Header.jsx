@@ -36,6 +36,8 @@ function Header(props) {
           ))}
         </ul>
       </div>
+      <i class="gg-search"></i>
+      <i class="gg-user"></i>
     </div>
   );
 }

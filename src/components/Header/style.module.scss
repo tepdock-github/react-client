@@ -1,20 +1,23 @@
+@import url('https://css.gg/css?=|search|user');
+
 %flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .headerContainer {
   @extend %flex-row;
+  flex-shrink: 1;
   align-items: center;
-  margin: 22px 22px 0px 22px;
-  border-bottom: 2px solid #f6f6f6;
+  justify-content: space-around;
+  border-bottom: 3px solid #f6f6f6;
 }
 
 .headerLogo {
   font-weight: bold;
 
   .logo {
-    margin-top: 0%;
     margin-bottom: 0%;
   }
 
@@ -26,20 +29,18 @@
 }
 
 .menuPanel {
-  margin-left: 5%;
-  align-items: center;
-  justify-content: space-around;
   font-size: large;
 
   ul {
     @extend %flex-row;
     justify-content: space-around;
     list-style-type: none;
-    border-bottom: 2px solid #f6f6f6;
-    font-weight: 700;
+    font-weight: 500;
 
     li {
       margin-right: 10px;
+      padding: 5px;
+      border-radius: 10px;
     }
   }
 
@@ -48,7 +49,11 @@
     justify-content: space-around;
     list-style-type: none;
     color: #f6f6f6;
-    font-weight: 800;
+    font-weight: 700;
     background-color: black;
   }
+}
+
+i{
+  --ggs: 1.5;
 }
