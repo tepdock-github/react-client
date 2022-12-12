@@ -28,14 +28,15 @@ function Header() {
             <li
               onClick={() => onClickMenu(index)}
               className={activeIndex === index ? `${styles.active}` : ""}
+              key={index}
             >
               {value}
             </li>
           ))}
         </ul>
       </div>
-      <i class="gg-search"></i>
-      <i class="gg-user"></i>
+      <i className="gg-search"></i>
+      <i className="gg-user"></i>
     </div>
   );
 }

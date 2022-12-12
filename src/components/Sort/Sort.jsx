@@ -1,6 +1,12 @@
+import React from "react";
 
-
-function Sort() {
+function Sort({ sorterActive, changeSorterActive }) {
+  const [open, setOpen] = React.useState(false);
+  const list = ['возрастанию', 'убыванию']
+  const doSelection = (id) => {
+    changeSorterActive(list[id]);
+    setOpen(false);
+  };
     return (
       <div className='sort'>
         <div className='sort_label'>
@@ -17,8 +23,24 @@ function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-          
+            <span onClick={()=>setOpen(!open)}>возрастанию</span>
         </div>
+           {open && (
+             <div className="sort_popup">
+               <ul>
+                 {list.map((sorter, index)=>{
+                   <li 
+                    key={index}
+                    className={sorter.name === sorterActive.name ? "active" : ""}
+                    onClick={()=>{
+                      doSelection(index);
+                    }}>
+                     {sorter.name}
+                   </li>
+                 })}
+               </ul>
+             </div>
+           )}
       </div>
     );
   }

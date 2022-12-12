@@ -1,13 +1,14 @@
 import './App.scss';
 
 import Header from './components/Header/Header';
-import CatalogPage from "./Pages/PaintingsCatalog/PaintingCatalog"
+import Home from './Pages/Home';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <CatalogPage/>
+      <Navbar />
+      <Home />
     </div>
   );
 }
